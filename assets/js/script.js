@@ -1,16 +1,27 @@
 var startBtn = document.querySelector(".start-button");
 var wordBlanksEl = document.querySelector(".word-blanks")
+var timeEL = document.querySelector('.timerCount');
+var scoreEl = document.querySelector('.score');
 
 var words = ["javascript", "variable", "object", "python", "local storage", "timeout", "interval"]
 var word = 
-
 var validChars = 'abcdefghijklmnopqrstuvwxyz'
-
 var guessedCharacters = []
-
 var score = 0
-
 var wordFromDom 
+var timeLeft = 15
+var intervalId 
+
+function startCountdown() {
+    intervalId = setInterval(function() {
+        timeLeft--
+        timerEl.textContent = timeLeft; 
+        if (timeLeft === 0 ) {
+            clearInterval(intervalId);
+            wordBlanksEl.innerText = "Game over, your score is" + score +);
+        }
+    }
+}, 1000
 
 function checkWord() {
     var wordFromDom = wordBlanksEl.textContent.split(' ').join(' ')
