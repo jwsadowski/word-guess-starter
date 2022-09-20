@@ -18,11 +18,10 @@ function startCountdown() {
         timerEl.textContent = timeLeft; 
         if (timeLeft === 0 ) {
             clearInterval(intervalId);
-            wordBlanksEl.innerText = "Game over, your score is" + score +);
-        }
-    }
-}, 1000
-
+            wordBlanksEl.innerText = "Game over, your score is" + score + ".");
+}
+    
+            
 function checkWord() {
     var wordFromDom = wordBlanksEl.textContent.split(' ').join(' ')
 }
